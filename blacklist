@@ -1,0 +1,11 @@
+local bl = {}
+local players = game:GetService("Players")
+game.Players.PlayerAdded:Connect(function() 
+	for _, v in pairs(game.Players:GetChildren()) do
+		for i = 1, #bl do
+			if v.UserId == bl[i] then
+				v:Kick("\nYou're blacklisted from the script. \nif you think its a mistake please contact HexR.")
+			end
+		end
+	end
+end)
